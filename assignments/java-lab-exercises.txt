@@ -35,7 +35,7 @@ Input Data: Java, Simple, ObjectOriented, Threaded, Dynamic, Secure, Language
 Expected Output: Dynamic, Java, Language, ObjectOriented, Secure, Threaded
 
 
-EXERCISE 06: Write a Account Manager program with below options.
+EXERCISE 06: Write an Account Manager program with below options.
 
 1. Create Account
 2. Update Account
