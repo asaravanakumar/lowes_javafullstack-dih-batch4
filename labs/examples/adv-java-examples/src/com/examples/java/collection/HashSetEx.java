@@ -2,6 +2,10 @@ package com.examples.java.collection;
 
 import java.util.HashSet;
 
+/*
+ * Unordered set of items. Hashing the element location for faster access.
+ * Better for frequent read and write with no ordering/sorting requirement.
+ */
 public class HashSetEx {
 
 	public static void main(String[] args) {

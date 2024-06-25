@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/*
+ * Ordered list of items. Underlying data structure is Doubly LinkedList.
+ * Better for frequent insertions and deletions.
+ */
 public class LinkedListEx {
 	
 	public static void main(String[] args) {

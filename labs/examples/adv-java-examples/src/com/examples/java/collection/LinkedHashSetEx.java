@@ -4,6 +4,9 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+/*
+ * 	Ordered set of items. Better for read with ordering requirement.
+ */
 public class LinkedHashSetEx {
 	
 	public static void main(String[] args) {

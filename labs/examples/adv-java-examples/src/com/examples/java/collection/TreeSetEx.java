@@ -4,6 +4,11 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
 
+/*
+ * 	Sorted set of items. Better for read with sorting requirement.
+ *  Uses a Red-Black tree (a balanced binary search tree) for storage.
+ *  Preferred when you need a sorted set of elements or need to perform range operations on the set.
+ */
 public class TreeSetEx {
 
 	private static Comparator<String> SORT_DESC = new Comparator<String>() {
