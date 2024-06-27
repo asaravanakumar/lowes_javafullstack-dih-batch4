@@ -35,7 +35,7 @@ Input Data: Java, Simple, ObjectOriented, Threaded, Dynamic, Secure, Language
 Expected Output: Dynamic, Java, Language, ObjectOriented, Secure, Threaded
 
 
-EXERCISE 06: Write an Account Manager program with below options.
+EXERCISE 06: Write an Account Manager program with below options with an ability to read/write the details from/to the console
 
 1. Create Account
 2. Update Account
@@ -46,20 +46,28 @@ EXERCISE 06: Write an Account Manager program with below options.
 7. Exit
 
 
-EXERCISE 07: Write a Java program to compute the distance between two points on the earth's surface.
+EXERCISE 07: Write a program to perform CRUD operations with Order using ArrayList
 
-Distance between the two points [ (x1,y1) & (x2,y2)]
-d = radius * arccos(sin(x1) * sin(x2) + cos(x1) * cos(x2) * cos(y1 - y2))
-Radius of the earth r = 6371.01 Kilometers
+Order:
+	int id
+	String description
+	String category
+	int quantity
+	double price
 
-Input Data:
-Input the latitude of coordinate 1: 25
-Input the longitude of coordinate 1: 35
-Input the latitude of coordinate 2: 35.5
-Input the longitude of coordinate 2: 25.5
+EXERCISE 08: Write a program to perform CRUD operations with Order using HashSet
 
-Expected Output:
+EXERCISE 09: Write a program to perform CRUD operations with Order using HashMap and also show below details
 
-The distance between those points is: 1480.0848451069087 km
+a. Show Order Category wise Count
+
+b. Show Order Category wise Total Amount
+
+EXERCISE 10: Write a generic program to sort given set of data [numbers or strings or objects] using Java Generics
+
+
+EXERCISE 11: Write a program to read/write Order details from using Java File IO
+
+EXERCISE 12: Write a multi-threading program to read/write Order details from using Java File IO asynchronously
 
 

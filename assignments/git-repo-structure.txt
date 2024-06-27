@@ -6,6 +6,8 @@ lowes_javabootcamp-dih-batch4
 			|__corejava
 					|
 					|___ core-java-labs
+					|
+					|___ adv-java-labs
 			|
 			|__springcore
 			|
@@ -20,15 +22,11 @@ lowes_javabootcamp-dih-batch4
 				|
 				|__corejava
 					|
-					|___core-java-assignments								
-					|
 					|___bankingapp-with-arrays				
 										
 					|___bankingapp-with-collection
 					|
 					|___bankingapp-with-collection-stats
-					|
-					 __ bankingapp-with-impexp
 					|
 					 __ bankingapp-with-impexp-thread
 					|

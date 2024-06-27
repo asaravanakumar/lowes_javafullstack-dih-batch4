@@ -30,5 +30,10 @@ com
 					|_______ exception
 							  |
 							  |_____ AccountException
+							  |
+							  |_____ NoAccountFoundException
+							  |
+							  |_____ AccountValidationException
+
 					|
 					|_______ util

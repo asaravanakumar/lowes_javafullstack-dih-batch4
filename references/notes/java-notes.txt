@@ -38,8 +38,6 @@ Release
 	- v21  -> 2023(Sep) (LTS)
 	- v22  -> 2024(Mar)
 
-
-
 	
 JDK vs JRE vs JVM - client / server
 
@@ -147,7 +145,7 @@ Object Oriented Programming
 	- Inheritance
 		- acquiring/inheriting state and behavior from parent class
 		- multi level inheritance supported
-		- using extends
+		- using extends or implements
 		- multiple inheritance is not supported due to ambiguity during run time
 		- with interfaces can support multiple inheritance
 		
@@ -185,6 +183,32 @@ Collections
 	- Reduces effort to learn and to use new APIs
 	- Reduces effort to design new APIs
 	- Fosters software reuse
+
+	Collection
+		- add()
+		- addAll()
+		- remove()
+		- removeAll()
+		- retainAll()
+		- contains()
+		- containsAll()
+		
+		- size()
+		- isEmpty()
+		- clear()
+		- iterator()
+		- toArray()
+		- stream()
+
+	List
+		- set(index, obj)
+		- add(index, obj)
+		- remove(index)
+		- indexOf()
+		- lastIndexOf()
+		- sort()
+		- 
+		
 	
 	Arrays
 		- Fixed size
