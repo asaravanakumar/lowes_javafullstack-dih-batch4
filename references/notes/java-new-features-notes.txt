@@ -7,8 +7,40 @@ Java New Features
 		Functional Interfaces
 		Method References
 		Default Methods
+		Optional
 		Stream API
+			Source - Arrays, Collection, IO, Optional, String
+							stream()
+							parallelStream()
+
+			Intermediate Operations
+						map, filter, sort, distinct, mapToInt, flatMap, 
+
+			Terminal Operation
+						foreach, count, summaryStatistics, collect, reduce
+
 		New Date/Time
+			Date
+			Calendar
+
+			java.time
+				LocalDateTime
+				LocalDate
+				LocalTime
+
+				OffsetDateTime
+				OffsetTime
+
+				ZonedDateTime
+				
+				Instant - GMT - Timestamp
+
+				Period
+				Duration
+
+				ChronoUnit
+				TemporalAdjusters
+				
 	
 	Java 9 Features
 
