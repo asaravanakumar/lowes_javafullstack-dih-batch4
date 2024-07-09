@@ -10,6 +10,8 @@ lowes_javabootcamp-dih-batch4
 					|___ adv-java-labs
 			|
 			|__springcore
+					|
+					|___ spring-core-labs
 			|
 			|__springmvc
 			|
@@ -28,17 +30,11 @@ lowes_javabootcamp-dih-batch4
 					|
 					|___bankingapp-with-collection-stats
 					|
-					 __ bankingapp-with-impexp-thread
+					|__ bankingapp-with-impexp-thread
 					|
-					 __ bankingapp-with-lamexp-stream-stats
+					|__ bankingapp-with-lamexp-stream-stats
 					|
-					 __ bankingapp-with-jdbc
-					|
-					 __ bankingapp-with-junit
-					|
-					 __ bankingapp-with-junit-mockito
-					|
-					 __ bankingapp-with-hibernate
+					|__ bankingapp-with-jdbc-junit
 
 				|
 				|__springcore

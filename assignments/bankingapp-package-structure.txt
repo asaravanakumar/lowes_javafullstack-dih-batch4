@@ -15,7 +15,8 @@ com
 							|
 							|_____ AccountService
 							|
-							|_____ AccountServiceColImpl								
+							|_____ AccountServiceImpl	
+							
 					|
 					|_______ model
 							   |
@@ -36,4 +37,6 @@ com
 							  |_____ AccountValidationException
 
 					|
-					|_______ util
+					|_______ config
+							  |
+							  |_____ AccountConfiguration
