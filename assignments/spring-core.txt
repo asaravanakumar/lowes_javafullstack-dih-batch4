@@ -1,2 +1,4 @@
 
 ASSIGNMENT 07: Enhance Banking App (ASSIGNMENT 06) to persist account details in database and perform CRUD operations using JDBC with Spring Java Based Configuration
+
+ASSIGNMENT 08: Enhance Banking App (ASSIGNMENT 07) to persist account details in database and perform CRUD operations using Spring JPA
