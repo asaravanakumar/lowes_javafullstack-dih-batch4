@@ -1,0 +1,36 @@
+
+Spring Hibernate Integration
+
+STEP 1: Add Dependencies
+		
+		spring-context
+		spring-orm
+		hibernate-core
+		mysql-connector-java
+		
+		spring-transaction
+		
+STEP 2: Add Persistence config
+		
+		META-INF/persistence.xml
+		
+STEP 3a: Add Spring Config [optional]
+
+		META-INF/spring/app-context.xml
+		
+STEP 3b: Create JpaConfiguration class and configure beans
+			JpaConfiguration.java
+			
+				Create LocalConatinerEntityManagerFactoryBean
+				Create and Inject DataSource Bean (MySQL)
+				Create and Inject JpaVendorAdapterBean
+				
+				Create JpaTransactionManager and inject LocalContainerEntityManagerFactoryBean
+				
+STEP 4: Create Entity classes and Annotate with relationships
+			Order.java
+			Item.java
+
+STEP 5: Create Main class and perform CRUD operations
+		
+			
