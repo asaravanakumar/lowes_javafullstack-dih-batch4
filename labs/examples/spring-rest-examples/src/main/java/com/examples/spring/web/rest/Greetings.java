@@ -1,10 +1,10 @@
 package com.examples.spring.web.rest;
 
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlRootElement;
 
 //import jakarta.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+//@XmlRootElement
 public class Greetings {
 	
 	private String message;

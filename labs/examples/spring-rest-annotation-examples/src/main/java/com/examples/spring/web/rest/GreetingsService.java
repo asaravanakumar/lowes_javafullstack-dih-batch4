@@ -58,7 +58,7 @@ public class GreetingsService {
 	//POST http://localhost:8080/spring-rest-annotation-examples/greetings/collection
 
 	@RequestMapping(value = "/greetings/collection", method = RequestMethod.POST)
-	public Map<String, String> postGreetingMap(@RequestBody Map<String, String> greeting) {
+	public Map<String, Object> postGreetingMap(@RequestBody Map<String, Object> greeting) {
 		greeting.put("updated", "POST collection mapping example");
 		return greeting;
 	}

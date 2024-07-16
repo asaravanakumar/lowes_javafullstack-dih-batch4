@@ -59,6 +59,12 @@
         </dependency>
         
 		<!-- XML Parsing Support -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${jackson.library}</version>
+		</dependency>
+
 <!--		<dependency>-->
 <!--		    <groupId>jakarta.xml.bind</groupId>-->
 <!--		    <artifactId>jakarta.xml.bind-api</artifactId>-->
