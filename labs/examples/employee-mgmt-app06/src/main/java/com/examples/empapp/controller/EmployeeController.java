@@ -4,6 +4,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -38,7 +39,7 @@ public class EmployeeController {
 	EmployeeService empService;
 
 	// List All Employees GET /employees
-	@GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
+	@GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	@CrossOrigin("*")
 	public List<Employee> getAllEmployees() {
 
@@ -46,14 +47,15 @@ public class EmployeeController {
 	}
 
 	// List employee for given Id GET /employees/{id}
-	@GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
+	@GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	@CrossOrigin("*")
 	public Employee getEmployee(@PathVariable int id) {
 		return empService.get(id);
 	}
 
 	// Create Employee POST /employees
-	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE })
+	@PostMapping(consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	@CrossOrigin("*")
 	public ResponseEntity<ResponseMessage> createEmployee(@RequestBody @Valid Employee employee)
 			throws URISyntaxException, ApplicationException {
@@ -74,7 +76,7 @@ public class EmployeeController {
 //			return ResponseEntity.badRequest().body(resMsg);			
 //		}
 
-		resMsg = new ResponseMessage("Success", new String[] {"Employee created successfully"});
+		resMsg = new ResponseMessage("Success", "Employee created successfully");
 
 		// Build newly created Employee resource URI - Employee ID is always 0 here.
 		// Need to get the new Employee ID.
@@ -86,41 +88,55 @@ public class EmployeeController {
 	}
 
 	// Update Employee PUT /employees/{id}
-	@PutMapping(value = "/{id}")
+	@PutMapping(value = "/{id}", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE },
+			produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	@CrossOrigin("*")
-	public String updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmp) {
+	public ResponseEntity<ResponseMessage> updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmp) {
 		updatedEmp.setEmpId(id);
 		empService.update(updatedEmp);
-		return "Employee updated successfully";
+
+		ResponseMessage resMsg = new ResponseMessage("Success", "Employee updated successfully");
+
+		return ResponseEntity.ok(resMsg);
 	}
 
 	// Delete Employee DELETE /employees/{id}
-	@DeleteMapping("/{id}")
+	@DeleteMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	@CrossOrigin("*")
-	public String deleteEmployee(@PathVariable int id) {
+	public ResponseEntity<ResponseMessage> deleteEmployee(@PathVariable int id) {
 		empService.delete(id);
-		return "Employee deleted successfully";
+
+		ResponseMessage resMsg = new ResponseMessage("Success", "Employee updated successfully");
+
+		return ResponseEntity.ok(resMsg);
 	}
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ResponseMessage> handleValidationExcpetion(MethodArgumentNotValidException e) {
 
-		List<ObjectError> errors = e.getBindingResult().getAllErrors();
-		int size = errors.size();
-		String[] errorMsgs = new String[size];
+//		List<ObjectError> errors = e.getBindingResult().getAllErrors();
+//		int size = errors.size();
+//		String[] errorMsgs = new String[size];
+//
+//		for(int i = 0; i < size; i++ ) {
+//			errorMsgs[i] = errors.get(i).getDefaultMessage();
+//		}
 
-		for(int i = 0; i < size; i++ ) {
-			errorMsgs[i] = errors.get(i).getDefaultMessage();
-		}
+		String errMsg = e.getBindingResult()
+				.getAllErrors()
+				.stream()
+				.map(err -> err.getDefaultMessage())
+				.collect(Collectors.joining(", "));
 
-		ResponseMessage resMsg = new ResponseMessage("Failure", errorMsgs);
+		ResponseMessage resMsg = new ResponseMessage("Failure", errMsg);
 		return ResponseEntity.badRequest().body(resMsg);
 	}
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<ResponseMessage> handleAppExcpetion(Exception e) {
-		ResponseMessage resMsg = new ResponseMessage("Failure", new String[] { e.getMessage() },
+		ResponseMessage resMsg = new ResponseMessage("Failure", e.getMessage(),
 				ExceptionUtils.getStackTrace(e));
+
 		return ResponseEntity.badRequest().body(resMsg);
 	}
 

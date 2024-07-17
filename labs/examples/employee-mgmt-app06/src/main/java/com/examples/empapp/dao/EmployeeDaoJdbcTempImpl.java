@@ -17,8 +17,6 @@ public class EmployeeDaoJdbcTempImpl implements EmployeeDao {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	NamedParameterJdbcTemplate namedJdbcTemplate;
-
 	@Override
 	public boolean create(Employee employee) throws DataException {
 //		String query = "INSERT INTO employee(name, age, department, designation, country) values(\""

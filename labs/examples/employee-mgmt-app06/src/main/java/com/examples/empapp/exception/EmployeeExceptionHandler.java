@@ -12,7 +12,7 @@ public class EmployeeExceptionHandler {
 	
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<ResponseMessage> handleAppExcpetion(Exception e) {
-		ResponseMessage resMsg = new ResponseMessage("Failure", new String[] {e.getMessage()}, ExceptionUtils.getStackTrace(e));
+		ResponseMessage resMsg = new ResponseMessage("Failure", e.getMessage(), ExceptionUtils.getStackTrace(e));
 		return ResponseEntity.badRequest().body(resMsg);
 	}
 	
