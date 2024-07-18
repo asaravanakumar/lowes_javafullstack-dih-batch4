@@ -14,10 +14,18 @@ lowes_javabootcamp-dih-batch4
 					|___ spring-core-labs
 			|
 			|__springmvc
+					|
+					|___ spring-mvc-labs
 			|
 			|__springrest
+					|
+					|___ spring-rest-labs
 			|
 			|__springboot
+					|
+					|___ sboot-core-labs
+					|
+					|___ sboot-rest-labs
 
 	|
 	|____ 	assignments
