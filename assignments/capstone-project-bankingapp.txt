@@ -15,6 +15,8 @@ Spring Boot + Spring Cloud + REST + Validation + Spring Data JPA / H2 + Unit Tes
 					|
 					|__registry-service
 					|
+					|__config-service
+					|
 					|__auth-service	
 					|
 					|__admin-service
@@ -27,8 +29,8 @@ REST API
 	POST	/accounts
 	PUT	/accounts/{id}
 	DELETE	/accounts/{id}
-	POST 	/accounts/{id}/deposits
-	POST 	/accounts/{id}/withdrawal
+	POST 	/accounts/{id}/deposits		[SYNC - REST API]
+	POST 	/accounts/{id}/withdrawal	[SYNC - REST API]
 	
 	Transaction Service [transaction-service]
 	GET 	/transactions
@@ -36,9 +38,9 @@ REST API
 	POST	/transactions
 	
 	Fund Transfer Service	[fund-transfer-service]
-	POST 	/fundTransfers
+	POST 	/fundTransfers			[ASYNC - MESSAGING]
 
-	Notification Service [notification-service]
+	Notification Service [notification-service]	[ASYNC - MESSAGING]
 	Event Driven
 
 	Account
