@@ -26,6 +26,10 @@ lowes_javabootcamp-dih-batch4
 					|___ sboot-core-labs
 					|
 					|___ sboot-rest-labs
+			|
+			|__springcloud
+					|
+					|___ scloud-**-labs
 
 	|
 	|____ 	assignments
@@ -50,11 +54,7 @@ lowes_javabootcamp-dih-batch4
 					|___bankingapp-with-spring-core-jdbc
 					|
 					|___bankingapp-with-spring-core-jpa
-				|
-				|__sprngmvc
-					|
-					|__bankingappt-with-spring-mvc
-				|
+		
 				|__springrest
 					|
 					|__bankingapp-with-spring-rest-jpa
@@ -63,6 +63,10 @@ lowes_javabootcamp-dih-batch4
 					|
 					|__bankingapp-with-spring-boot-data-jpa
 			        
+				
+	|
+	|____ 	capstone
+				|
 				|__bankingapp
 					|
 					|__account-service
@@ -75,7 +79,9 @@ lowes_javabootcamp-dih-batch4
 					|
 					|__gateway-service	
 					|
-					|__registry-service	
+					|__registry-service
+					|
+					|__config-service		
 					|
 					|__admin-service
 					|

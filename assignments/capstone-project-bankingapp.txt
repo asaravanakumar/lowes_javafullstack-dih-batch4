@@ -20,6 +20,8 @@ Spring Boot + Spring Cloud + REST + Validation + Spring Data JPA / H2 + Unit Tes
 					|__auth-service	
 					|
 					|__admin-service
+					|
+					|__bankingapp-ui
 
 REST API
 	
@@ -29,6 +31,7 @@ REST API
 	POST	/accounts
 	PUT	/accounts/{id}
 	DELETE	/accounts/{id}
+	GET	/accounts/search
 	POST 	/accounts/{id}/deposits		[SYNC - REST API]
 	POST 	/accounts/{id}/withdrawal	[SYNC - REST API]
 	
@@ -117,13 +120,17 @@ com
 							   |
 							   |____ Account
 							   |
-							   |____ Transaction							   
+							   |____ Transaction
+							   |
+							   |____ FundTransfer							   
 					|
 					|_______ repository
 							  |
 							  |_____ AccountRepository
 							  |
 							  |_____ TransactionRepository
+							  |
+							  |_____ FundTransferRepository
 					|
 					|_______ exception
 							  |
