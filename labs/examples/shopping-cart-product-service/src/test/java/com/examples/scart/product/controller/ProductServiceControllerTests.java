@@ -77,8 +77,8 @@ public class ProductServiceControllerTests {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-//        RequestEntity request = new RequestEntity(reqBody, headers, HttpMethod.POST, new URI("/products"));
-        RequestEntity request = new RequestEntity(reqBody, headers, HttpMethod.POST, new URI("/"));
+        RequestEntity request = new RequestEntity(reqBody, headers, HttpMethod.POST, new URI("/products"));
+//        RequestEntity request = new RequestEntity(reqBody, headers, HttpMethod.POST, new URI("/"));
 
 
         // Step 2: Send Request to Endpoint
@@ -103,8 +103,8 @@ public class ProductServiceControllerTests {
         // Step 1: Create Request
         // Step 2: Send Request to Endpoint
         // Step 3: Receive the Response
-//        ResponseEntity<Object> response = restTemp.getForEntity("/products", Object.class);
-        ResponseEntity<Object> response = restTemp.getForEntity("/", Object.class);
+        ResponseEntity<Object> response = restTemp.getForEntity("/products", Object.class);
+//        ResponseEntity<Object> response = restTemp.getForEntity("/", Object.class);
 
 
         List<Product> products = (List) response.getBody();

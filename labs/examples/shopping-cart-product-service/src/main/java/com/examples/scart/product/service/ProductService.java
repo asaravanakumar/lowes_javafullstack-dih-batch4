@@ -44,8 +44,9 @@ public class ProductService {
 
     public void deleteProduct(String id) {
 //        productRepo.remove(id);
-    	System.out.println("Product: " + productRepo.findById(id).get().getId());
-        productRepo.delete(productRepo.findById(id).get());
+//    	System.out.println("Product: " + productRepo.findById(id).get().getId());
+//        productRepo.delete(productRepo.findById(id).get());
+        productRepo.deleteById(id);
     }
 
     public Product getProduct(String id) {

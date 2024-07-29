@@ -21,8 +21,8 @@ import com.examples.scart.product.model.Product;
 import com.examples.scart.product.service.ProductService;
 
 @RestController
-@RequestMapping("/")
-//@RequestMapping("/products")
+//@RequestMapping("/")
+@RequestMapping("/products")
 public class ProductServiceController {
 //   private static Map<String, Product> productRepo = new HashMap<>();
    private static Logger log = LoggerFactory.getLogger(ProductServiceController.class);

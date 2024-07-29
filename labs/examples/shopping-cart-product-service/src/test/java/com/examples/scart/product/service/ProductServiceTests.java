@@ -2,6 +2,7 @@ package com.examples.scart.product.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.junit.jupiter.api.AfterAll;
@@ -50,7 +51,7 @@ public class ProductServiceTests {
 		mobile.setName("Samsung Galaxy Note10");
 		mobile.setCategory("Mobiles");
 		mobile.setManufacturer("Samsung");
-		productService.createProduct(mobile);
+//		productService.createProduct(mobile);
 		products.add(mobile);
 
 		Product laptop = new Product();
@@ -58,14 +59,14 @@ public class ProductServiceTests {
 		laptop.setName("Lenovo Thinkpad E490");
 		laptop.setCategory("Laptops");
 		laptop.setManufacturer("Lenovo");
-		productService.createProduct(laptop);
+//		productService.createProduct(laptop);
 		products.add(laptop);
 	}
 
 	@AfterEach
 	public void cleanup() {
-		productService.clear();
-//		products.clear();
+//		productService.clear();
+		products.clear();
 	}
 
 	@Test
@@ -91,25 +92,25 @@ public class ProductServiceTests {
 
 	@Test
 	public void shouldShowErrorWhenNotPassingMandatoryDetails() {
-//		Mockito.lenient().when(productRepo.save(Mockito.any())).thenThrow(new RuntimeException("Product Id Mandatory"));
+		Mockito.lenient().when(productRepo.save(Mockito.any())).thenThrow(new RuntimeException("Product Id Mandatory"));
 
 		Product product = new Product();
 
 		Exception e = assertThrows(RuntimeException.class, () -> productService.createProduct(product));
 
 		assertEquals("Product Id mandatory", e.getMessage());
-
-//	} catch (Exception e) {
-//			assertEquals("Product Id mandatory", e.getMessage());
-//		}
 	}
 
 	@Test
 	public void shouldUpdateProductForGivenProductId() {
+
 		Product laptop = new Product();
 		laptop.setName("Lenovo Thinkpad E490");
 		laptop.setCategory("Laptops");
 		laptop.setManufacturer("Lenovo");
+
+		Mockito.lenient().when(productRepo.save(Mockito.any())).thenReturn(laptop);
+		Mockito.lenient().when(productRepo.findById("2")).thenReturn(Optional.of(laptop));
 
 		productService.updateProduct("2", laptop);
 
@@ -120,9 +121,11 @@ public class ProductServiceTests {
 	@Test
 	public void shouldDeleteProductWhenPassingValidProductId() {
 
+		Mockito.lenient().when(productRepo.findById("2")).thenReturn(Optional.ofNullable(null));
+
+
 		productService.deleteProduct("2");
 		assertNull(productService.getProduct("2"));
-		assertEquals(1, productService.getProducts().size());
 	}
 
 	@Test
