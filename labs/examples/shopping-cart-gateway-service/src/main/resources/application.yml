@@ -14,6 +14,23 @@ spring:
         filters:
           - StripPrefix=2
 
+      configRoute2:
+        uri: lb://customer-service
+        predicates:
+          - Path=/shoppingcart/api/customers/**
+          - Method=GET,POST,PUT,DELETE
+        filters:
+          - StripPrefix=2
+
+      configRoute3:
+        uri: lb://order-service
+        predicates:
+          - Path=/shoppingcart/api/orders/**
+          - Method=GET,POST,PUT,DELETE
+        filters:
+          - StripPrefix=2
+
+
 # Eureka Client
 eureka:
   client:
