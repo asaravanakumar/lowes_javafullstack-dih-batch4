@@ -26,8 +26,8 @@ import com.examples.scart.customer.model.ResponseMessage;
 import com.examples.scart.customer.service.CustomerService;
 
 @RestController
-@RequestMapping("/")
-//@RequestMapping("/customers")
+//@RequestMapping("/")
+@RequestMapping("/customers")
 public class CustomerController {
 	
 	@Autowired

@@ -26,8 +26,8 @@ import com.examples.scart.order.model.ResponseMessage;
 import com.examples.scart.order.service.OrderService;
 
 @RestController
-@RequestMapping("/")
-//@RequestMapping("/orders")
+//@RequestMapping("/")
+@RequestMapping("/orders")
 public class OrderController {
 
 	@Autowired
