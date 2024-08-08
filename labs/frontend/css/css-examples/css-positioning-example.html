@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position Example</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin: 10px;
+      }
+
+      .static {
+        position: static;
+        background-color: lightcoral;
+      }
+
+      .relative {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        background-color: lightgreen;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        background-color: lightpink;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: lightyellow;
+      }
+
+      .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 20px;
+        background-color: lightgray;
+      }
+
+      .container {
+        height: 500px;
+        background-color: #f0f0f0;
+        overflow: auto;
+        padding: 10px;
+      }
+
+      .content {
+        height: 1000px;
+        background-color: #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box static">Static</div>
+    <div class="box relative">Relative</div>
+    <div class="box absolute">Absolute</div>
+    <div class="box fixed">Fixed</div>
+
+    <div class="container">
+      <div class="box sticky">Sticky</div>
+      <div class="content">Scroll down to see sticky behavior</div>
+    </div>
+  </body>
+</html>
