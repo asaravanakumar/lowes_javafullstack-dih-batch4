@@ -5,6 +5,7 @@
 **/*.settings
 **/*.smarttomcat
 **/*.idea
+**/*.vscode
 **/target
 **/bin
 **/build
